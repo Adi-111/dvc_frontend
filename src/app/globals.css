@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Base theme with a tech-inspired, futuristic feel */
+:root {
+  /* Base Colors */
+  --background: #e9e9e9;      /* Dark near-black for a sleek, modern backdrop */
+  --foreground: #e0e0e0;      /* Light gray for clear contrast on dark backgrounds */
+
+  /* Accent Colors */
+  --accent-primary: #00e5ff;  /* Neon cyan for vibrant highlights */
+  --accent-secondary: #ff4081;/* Neon pink for secondary accent details */
+
+  /* Font Choices for a modern look */
+  --font-sans: 'Roboto', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+/* Maintain the tech theme even when users prefer a dark color scheme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --foreground: #e0e0e0;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
